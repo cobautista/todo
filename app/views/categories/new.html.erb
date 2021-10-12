@@ -1,0 +1,14 @@
+<%= form_with scope: :category, model: @category, local: true do |f| %>
+
+    <div class="font-bold text-4xl eli-color">
+      New Agenda
+    </div>
+    
+    <div>
+      <%= f.text_field :title, placeholder: "Category Title" %>
+      <%= f.text_area :body, size: "40x7", placeholder: "Category Description"%>
+    </div>
+
+    <%= f.submit 'Create Category'%>
+  
+  <% end %>

@@ -1,0 +1,18 @@
+<h1>Category</h1>
+<% if @categories.count==0 %>
+<%= link_to "Create a new category", new_category_path%>
+<h1> No Categories </h1>
+<% else %>
+
+
+<%@categories.each do |c| %>
+    
+    <h1>Title: <%= c.title%></h1>
+    <h3>Body: <%= c.body%></h3>
+
+    <%= link_to "show", category_path(c)%>
+    <%= link_to "update", edit_category_path(c)%>
+    <%= link_to "delete", category_path(c), method: :delete, data: {Confirm: 'Are you sure?'}%>
+    
+<%end%>
+<%end%>
