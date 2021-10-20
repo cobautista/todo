@@ -1,0 +1,16 @@
+
+    <%= form_with scope: :task, model: @task, local: true do |t| %>
+
+        <h1 >
+          New Task
+        </h1>
+        
+        <div>
+          <%= t.text_field :title, placeholder: "Task Title" %>
+          <%= t.text_area :body, size: "40x7", placeholder: "Task Description"%>
+          <%= t.text_field :category_id, value: @category.id %>
+        </div>
+    
+        <%= t.submit 'Create Task'%>
+      
+    <% end %>

@@ -12,8 +12,10 @@ class CategoriesController < ApplicationController
         @category = Category.new(category_params)
     
         if @category.valid?
-          @category.save
+           @category.save
           redirect_to home_path
+
+          flash[:notice]="succesfully created category"
     
         else
           render :new

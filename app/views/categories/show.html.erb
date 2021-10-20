@@ -1,0 +1,10 @@
+<h1>Title: <%= @category.title%></h1>
+    <h3>Body: <%= @category.body%></h3>
+
+
+    <%= link_to "home", home_path()%>
+
+
+    <%= link_to "Create a new task", new_category_task_path(@category)%>
+
+

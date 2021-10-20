@@ -1,16 +1,21 @@
 class TasksController < ApplicationController
 before_action :get_category
 
-def index
+  def index
     @tasks = @category.tasks
   end
 
   def new
+    
+    
     @task = @category.tasks.build
+    
+    
   end
 
   def create
-    @task = @category.tasks.build(task_params)
+    @categ = Category.find(params[:task][:category_id])
+    @task = @categ.tasks.build(task_params)
 
     # if @task.valid?
       if @task.save
@@ -50,7 +55,7 @@ def index
     
       private
       def task_params
-        params.require(:task).permit(:title, :body, :duedate)
+        params.require(:task).permit(:title, :body, :duedate, :category_id)
         
       end
 
@@ -59,3 +64,5 @@ def index
         @category = Category.find(params[:category_id]) #category id is the foreign key in the task
       end
 end
+
+

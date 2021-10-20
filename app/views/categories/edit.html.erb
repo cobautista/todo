@@ -1,0 +1,23 @@
+<%= form_with scope: :category, url: @category, method: :put, local: true do |c| %>
+
+  
+      <h3>Edit Category</h3>
+  
+       
+        <%= c.label :title %>
+        <%= c.text_field :title, placeholder:"Title"%>
+        <%# <input type="text"  placeholder="Title"> %>
+        
+  
+      
+        <%= c.label :body %>
+        <%= c.text_area :body, placeholder:"Body", rows:"3"%>
+        <%# <textarea rows="3"></textarea> %>
+    
+  
+     
+        <%= c.submit %>
+      
+   
+  
+  <% end %>
